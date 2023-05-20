@@ -65,6 +65,9 @@ loadjs=window.loadjs || function(){var h=function(){},o={},c={},f={};function u(
         code.hljs {
             padding: 1em;
         }
+        .source-code.code-badge-pre {
+            margin: 0;
+        }
         `
         document.head.appendChild(style);
     }
