@@ -15,6 +15,7 @@ loadjs=window.loadjs || function(){var h=function(){},o={},c={},f={};function u(
     const defaultSettings = {
         style: 'github'
     }
+    
     // Expect data-widget-config attribute
     const scriptOption = JSON.parse(currentscript.dataset.widgetConfig || "{}");
 
