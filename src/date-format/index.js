@@ -8,6 +8,10 @@
         document.addEventListener("DOMContentLoaded", fn.bind(this, currentscript));
     }
 })(function(currentscript) {
+    if (window.self !== window.top) {
+        return;
+    }
+
     const defaultSettings = {
         outputFormat: 'DD/MM/YYYY',
         defaultLocale: 'en',
