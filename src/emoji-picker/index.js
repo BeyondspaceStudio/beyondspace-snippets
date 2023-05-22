@@ -23,7 +23,7 @@ loadjs=window.loadjs || function(){var h=function(){},o={},c={},f={};function u(
         depsCheck: () => typeof PlainDraggable !== 'undefined',
     },{
         path: 'https://cdn.jsdelivr.net/npm/rangy@1.3.1/lib/rangy-core.min.js',
-        depsCheck: () => typeof rangy !== 'undefined' && rangy?.initialized,
+        depsCheck: () => typeof rangy !== 'undefined' && rangy?.hashOwnProperty('initialized'),
     }];
 
     const loadjsDeps = [];
