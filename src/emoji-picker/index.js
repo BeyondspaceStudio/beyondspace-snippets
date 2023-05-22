@@ -10,14 +10,14 @@ loadjs=window.loadjs || function(){var h=function(){},o={},c={},f={};function u(
         document.addEventListener("DOMContentLoaded", fn.bind(this, currentscript));
     }
 })(function(currentscript) {
+    if (window.self === window.top) {
+        return;
+    }
     const debugMode = new URLSearchParams(window.top.location.search).get('beyondspace-debug') !== null;
 
     const deps = [{
         path: 'https://cdn.jsdelivr.net/gh/csuwildcat/SelectorListener/selector-listeners.min.js',
         depsCheck: () => document?.SelectorListener,
-    },{
-        path: 'https://cdn.jsdelivr.net/npm/emoji-mart@latest/dist/browser.js',
-        depsCheck: () => typeof EmojiMart !== 'undefined',
     },{
         path: 'https://cdn.jsdelivr.net/npm/plain-draggable@2.5.14/plain-draggable.min.js',
         depsCheck: () => typeof PlainDraggable !== 'undefined',
