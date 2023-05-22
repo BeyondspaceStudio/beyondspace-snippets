@@ -35,11 +35,14 @@ loadjs=window.loadjs || function(){var h=function(){},o={},c={},f={};function u(
     });
     loadjs([
         ...loadjsDeps,
-        debugMode ? 'http://localhost:3000/static/js/bundle.js' : 'https://beyondspace-admin.pages.dev/blogpub-datepicker/main.js?t=' + Date.now(),
     ], 'emoji-picker-deps');
 
     loadjs.ready('emoji-picker-deps', function() {
-        debugMode && console.log('loaded');
+        debugMode && console.log('deps loaded');
+        
+        loadjs([
+            debugMode ? 'http://localhost:3000/static/js/bundle.js' : 'https://beyondspace-admin.pages.dev/emoji-selector/main.js?t=' + Date.now(),
+        ], 'foobar');
     });
 });
 
