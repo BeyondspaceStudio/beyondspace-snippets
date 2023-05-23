@@ -29,11 +29,14 @@ loadjs=window.loadjs || function(){var h=function(){},o={},c={},f={};function u(
     });
     loadjs([
         ...loadjsDeps,
-        debugMode ? 'http://localhost:3000/static/js/bundle.js' : 'https://beyondspace-admin.pages.dev/blogpub-datepicker/main.js?t=' + Date.now(),
     ], 'pubdate-datepicker-deps');
 
     loadjs.ready('pubdate-datepicker-deps', function() {
         debugMode && console.log('loaded');
+
+        loadjs([
+            debugMode ? 'http://localhost:3000/static/js/bundle.js' : 'https://beyondspace-admin.pages.dev/blogpub-datepicker/main.js?t=' + Date.now(),
+        ], 'foobar');
     });
 });
 
