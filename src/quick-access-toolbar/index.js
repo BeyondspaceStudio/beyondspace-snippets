@@ -35,9 +35,9 @@ loadjs=window.loadjs || function(){var h=function(){},o={},c={},f={};function u(
     });
     loadjs([
         ...loadjsDeps,
-    ], 'beyondpsace-quick-access-toolbar-deps');
+    ], 'beyondspace-quick-access-toolbar-deps');
 
-    loadjs.ready('beyondpsace-quick-access-toolbar-deps', function() {
+    loadjs.ready('beyondspace-quick-access-toolbar-deps', function() {
         debugMode && console.log('loaded');
 
         loadjs([
