@@ -27,7 +27,10 @@ loadjs=window.loadjs || function(){var h=function(){},o={},c={},f={};function u(
     const deps = [{
         path: 'https://cdn.jsdelivr.net/combine/npm/highlightjs-badge@0.1.9/highlightjs/highlight.pack.min.js,npm/highlightjs-badge@0.1.9',
         depsCheck: () => window.hljs && window.highlightJsBadge,
-    },{
+    }, {
+        path: 'https://cdn.jsdelivr.net/gh/csuwildcat/SelectorListener/selector-listeners.min.js',
+        depsCheck: () => document?.SelectorListener,
+    }, {
         path: `https://cdn.jsdelivr.net/npm/highlightjs-badge@0.1.9/highlightjs/styles/${options.style}.min.css`,
     }];
 
@@ -73,25 +76,32 @@ loadjs=window.loadjs || function(){var h=function(){},o={},c={},f={};function u(
     }
 
     loadjs.ready('beyondspace-highlight-block-deps', function() {
-        var pres = document.querySelectorAll("pre.source-code");
-        for (var i = 0; i < pres.length; i++) {
-            const codeElement = document.createElement('code');
-            codeElement.style.whiteSpace = 'pre-wrap';
+        function enableHighlight(selector) {
+            var pres = document.querySelectorAll(selector || "pre.source-code:not(.raw-source-code)");
+            for (var i = 0; i < pres.length; i++) {
+                const codeElement = document.createElement('code');
+                codeElement.style.whiteSpace = 'pre-wrap';
 
-            codeElement.textContent = pres[i].textContent;
-            pres[i].innerHTML = '';
-            pres[i].appendChild(codeElement);
-            hljs.highlightBlock(pres[i].querySelector('code'));
+                codeElement.textContent = pres[i].textContent;
+                pres[i].innerHTML = '';
+                pres[i].appendChild(codeElement);
+                hljs.highlightBlock(pres[i].querySelector('code'));
+            }
+            
+            // add HighlightJS-badge (options are optional)
+            var options = {   // optional
+                // CSS class(es) used to render the copy icon.
+            copyIconClass: "highlight-block-copy",
+            // CSS class(es) used to render the done icon.
+            checkIconClass: "highlight-block-check"
+            };
+            window.highlightJsBadge(options);
         }
-        
-        // add HighlightJS-badge (options are optional)
-        var options = {   // optional
-            // CSS class(es) used to render the copy icon.
-        copyIconClass: "highlight-block-copy",
-        // CSS class(es) used to render the done icon.
-        checkIconClass: "highlight-block-check"
-        };
-        window.highlightJsBadge(options);
+        enableHighlight();
+        // Listen to new .raw-source-code
+        document.addSelectorListener('pre.source-code.raw-source-code', (e) => {
+            enableHighlight('pre.source-code.raw-source-code');
+        })
     });
 });
 
