@@ -79,6 +79,10 @@ loadjs=window.loadjs || function(){var h=function(){},o={},c={},f={};function u(
         function enableHighlight() {
             var pres = document.querySelectorAll("pre.source-code");
             for (var i = 0; i < pres.length; i++) {
+                // Check if the pre contains code.hljs
+                if (pres[i].querySelector('code.hljs')) {
+                    continue;
+                }
                 const codeElement = document.createElement('code');
                 codeElement.style.whiteSpace = 'pre-wrap';
 
