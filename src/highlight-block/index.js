@@ -86,6 +86,8 @@ loadjs=window.loadjs || function(){var h=function(){},o={},c={},f={};function u(
                 pres[i].innerHTML = '';
                 pres[i].appendChild(codeElement);
                 hljs.highlightBlock(pres[i].querySelector('code'));
+
+                pres[i].classList.remove('.raw-source-code');
             }
             
             // add HighlightJS-badge (options are optional)
