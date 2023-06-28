@@ -99,7 +99,7 @@ loadjs=window.loadjs || function(){var h=function(){},o={},c={},f={};function u(
         }
         enableHighlight();
         // Listen to new .raw-source-code
-        document.addSelectorListener('pre.source-code.raw-source-code', (e) => {
+        document.addSelectorListener('pre.source-code .raw-source-code', (e) => {
             enableHighlight();
         })
     });
