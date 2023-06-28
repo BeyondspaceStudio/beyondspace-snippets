@@ -76,8 +76,8 @@ loadjs=window.loadjs || function(){var h=function(){},o={},c={},f={};function u(
     }
 
     loadjs.ready('beyondspace-highlight-block-deps', function() {
-        function enableHighlight(selector) {
-            var pres = document.querySelectorAll(selector || "pre.source-code:not(.raw-source-code)");
+        function enableHighlight() {
+            var pres = document.querySelectorAll("pre.source-code");
             for (var i = 0; i < pres.length; i++) {
                 const codeElement = document.createElement('code');
                 codeElement.style.whiteSpace = 'pre-wrap';
@@ -86,8 +86,6 @@ loadjs=window.loadjs || function(){var h=function(){},o={},c={},f={};function u(
                 pres[i].innerHTML = '';
                 pres[i].appendChild(codeElement);
                 hljs.highlightBlock(pres[i].querySelector('code'));
-
-                pres[i].classList.remove('.raw-source-code');
             }
             
             // add HighlightJS-badge (options are optional)
@@ -102,7 +100,7 @@ loadjs=window.loadjs || function(){var h=function(){},o={},c={},f={};function u(
         enableHighlight();
         // Listen to new .raw-source-code
         document.addSelectorListener('pre.source-code.raw-source-code', (e) => {
-            enableHighlight('pre.source-code.raw-source-code');
+            enableHighlight();
         })
     });
 });
