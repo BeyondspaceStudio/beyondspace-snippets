@@ -17,7 +17,7 @@
         defaultLocale: 'en',
     }
     // Expect data-widget-config attribute
-    const scriptOption = JSON.parse(currentscript.dataset.widgetConfig || "{}");
+    const scriptOption = JSON.parse(currentscript?.dataset?.widgetConfig || "{}");
 
     const options = {
         ...defaultSettings,
@@ -200,7 +200,7 @@
             
             let linkElement = null;
             if (!selectorItem.isBlogPost) {
-                linkElement = blogItem.querySelector(selectorItem.link);
+                linkElement = blogItem.querySelector(selectorItem.link) || blogItem.querySelector(selectorItem.alternateLink);
             } else {
                 linkElement = document.querySelector(selectorItem.link);
             }
@@ -251,12 +251,14 @@
     },{
         item: `.summary-metadata-item--date`,
         parent: `.summary-item`,
-        link: `.summary-title a[href]`,
+        link: `.summary-thumbnail-outer-container a`,
+        alternateLink: `.summary-title a[href]`,
         desc: `Summary Block`
     },{
         item: `.sqs-seven-one[class*=collection-type-blog].view-list .blog-item time[pubdate]`,
         parent: `.blog-item`,
-        link: `.blog-title a[href]`,
+        link: `.blog-image-wrapper a`,
+        alternateLink: `.blog-title a[href]:not(.passthrough-link)`,
         desc: `Blog List Items 7.1`
     },{
         item: `.sqs-seven-one[class*=collection-type-blog].view-item article time[pubdate]`,
@@ -280,4 +282,3 @@
         }, 1500);
     }
 });
-
