@@ -10,8 +10,8 @@ loadjs=window.loadjs || function(){var h=function(){},o={},c={},f={};function u(
         document.addEventListener("DOMContentLoaded", fn.bind(this, currentscript));
     }
 })(function(currentscript) {
-    const debugMode = new URLSearchParams(window.location.search).get('beyondspace-debug') !== null;
-
+    const debugMode = new URLSearchParams(window.location.search).get('beyondspace-debug') !== null || window.isBeyondspaceDebugMode;
+    
     const deps = [{
         path: 'https://cdn.jsdelivr.net/gh/csuwildcat/SelectorListener/selector-listeners.min.js',
         depsCheck: () => document?.SelectorListener,
@@ -35,7 +35,7 @@ loadjs=window.loadjs || function(){var h=function(){},o={},c={},f={};function u(
         debugMode && console.log('loaded');
 
         loadjs([
-            debugMode ? 'http://localhost:3000/static/js/bundle.js' : 'https://beyondspace-admin.pages.dev/blogpub-datepicker/main.js?t=' + Date.now(),
+            debugMode ? 'https://localhost:3000/static/js/bundle.js' : 'https://beyondspace-admin.pages.dev/blogpub-datepicker/main.js?t=' + Date.now(),
         ], 'foobar');
     });
 });
