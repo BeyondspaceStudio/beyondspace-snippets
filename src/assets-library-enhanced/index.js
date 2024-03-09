@@ -28,12 +28,12 @@ loadjs=window.loadjs || function(){var h=function(){},o={},c={},f={};function u(
         ...loadjsDeps,
     ], 'assets-library-enhanced-deps');
 
-    loadjs.ready('assets-library-enhanced-deps', function() {
+    loadjs.ready('beyondspace-assets-library-enhanced-deps', function() {
         debugMode && console.log('loaded');
 
         loadjs([
             debugMode ? 'https://localhost:3000/static/js/bundle.js' : 'https://beyondspace-admin.pages.dev/assets-library-enhanced/main.js?t=' + Date.now(),
-        ], 'assets-library-enhanced-deps');
+        ], 'beyondspace-assets-library-enhanced');
     });
 });
 
