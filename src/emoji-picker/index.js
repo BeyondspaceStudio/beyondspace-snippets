@@ -40,12 +40,12 @@ loadjs=window.loadjs || function(){var h=function(){},o={},c={},f={};function u(
         ...loadjsDeps,
     ], 'emoji-picker-deps');
 
-    loadjs.ready('emoji-picker-deps', function() {
+    loadjs.ready('beyondspace-emoji-picker-deps', function() {
         debugMode && console.log('deps loaded');
         
         loadjs([
             debugMode ? 'https://localhost:3000/static/js/bundle.js' : 'https://beyondspace-admin.pages.dev/emoji-selector/main.js?t=' + Date.now(),
-        ], 'emoji-picker-deps');
+        ], 'beyondspace-emoji-picker');
     });
 });
 
