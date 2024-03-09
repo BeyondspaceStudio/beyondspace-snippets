@@ -28,11 +28,11 @@ loadjs=window.loadjs || function(){var h=function(){},o={},c={},f={};function u(
         ...loadjsDeps,
     ], 'classic-gallery-block-deps');
 
-    loadjs.ready('classic-gallery-block-deps', function() {
+    loadjs.ready('beyondspace-classic-gallery-block-deps', function() {
         debugMode && console.log('loaded');
 
         loadjs([
             debugMode ? 'https://localhost:3000/static/js/bundle.js' : 'https://beyondspace-admin.pages.dev/classic-gallery-block/main.js?t=' + Date.now(),
-        ], 'classic-gallery-block-deps');
+        ], 'beyondspace-classic-gallery-block');
     });
 });
