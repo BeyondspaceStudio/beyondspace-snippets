@@ -31,12 +31,12 @@ loadjs=window.loadjs || function(){var h=function(){},o={},c={},f={};function u(
         ...loadjsDeps,
     ], 'pubdate-datepicker-deps');
 
-    loadjs.ready('pubdate-datepicker-deps', function() {
+    loadjs.ready('beyondspace-pubdate-datepicker-deps', function() {
         debugMode && console.log('loaded');
 
         loadjs([
             debugMode ? 'https://localhost:3000/static/js/bundle.js' : 'https://beyondspace-admin.pages.dev/blogpub-datepicker/main.js?t=' + Date.now(),
-        ], 'pubdate-datepicker-deps');
+        ], 'beyondspace-pubdate-datepicker');
     });
 });
 
