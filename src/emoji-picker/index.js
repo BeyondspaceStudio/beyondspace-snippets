@@ -45,7 +45,7 @@ loadjs=window.loadjs || function(){var h=function(){},o={},c={},f={};function u(
         
         loadjs([
             debugMode ? 'https://localhost:3000/static/js/bundle.js' : 'https://beyondspace-admin.pages.dev/emoji-selector/main.js?t=' + Date.now(),
-        ], 'foobar');
+        ], 'emoji-picker-deps');
     });
 });
 
