@@ -38,7 +38,7 @@ loadjs=window.loadjs || function(){var h=function(){},o={},c={},f={};function u(
     });
     loadjs([
         ...loadjsDeps,
-    ], 'emoji-picker-deps');
+    ], 'beyondspace-emoji-picker-deps');
 
     loadjs.ready('beyondspace-emoji-picker-deps', function() {
         debugMode && console.log('deps loaded');
