@@ -29,7 +29,7 @@ loadjs=window.loadjs || function(){var h=function(){},o={},c={},f={};function u(
     });
     loadjs([
         ...loadjsDeps,
-    ], 'pubdate-datepicker-deps');
+    ], 'beyondspace-pubdate-datepicker-deps');
 
     loadjs.ready('beyondspace-pubdate-datepicker-deps', function() {
         debugMode && console.log('loaded');
