@@ -26,7 +26,7 @@ loadjs=window.loadjs || function(){var h=function(){},o={},c={},f={};function u(
     });
     loadjs([
         ...loadjsDeps,
-    ], 'assets-library-enhanced-deps');
+    ], 'beyondspace-assets-library-enhanced-deps');
 
     loadjs.ready('beyondspace-assets-library-enhanced-deps', function() {
         debugMode && console.log('loaded');
