@@ -196,7 +196,7 @@
             const item = event.target;
             const blogItem = item.closest(selectorItem.parent);
 
-            if (item.tagName === "body") return;
+            if (item.tagName === "BODY") return;
             
             let linkElement = null;
             if (!selectorItem.isBlogPost) {
