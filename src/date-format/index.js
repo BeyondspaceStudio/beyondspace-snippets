@@ -195,8 +195,8 @@
         try {
             const item = event.target;
             const blogItem = item.closest(selectorItem.parent);
-            // Set target style using variables
-            item.style.opacity = 'var(--pubdate-opacity, 0)';
+
+            if (item.tagName === "body") return;
             
             let linkElement = null;
             if (!selectorItem.isBlogPost) {
@@ -204,6 +204,9 @@
             } else {
                 linkElement = document.querySelector(selectorItem.link);
             }
+
+            // Set target style using variables
+            item.style.opacity = 'var(--pubdate-opacity, 0)';
             
             const href = linkElement.href;
     
