@@ -32,4 +32,10 @@ loadjs=window.loadjs || function(){var h=function(){},o={},c={},f={};function u(
             debugMode ? 'https://localhost:3000/static/js/bundle.js' : 'https://beyondspace-admin.pages.dev/ground-control/main.js?t=' + Date.now(),
         ], 'beyondspace-ground-control');
     });
+
+    if (!deps.length) {
+        loadjs([
+            debugMode ? 'https://localhost:3000/static/js/bundle.js' : 'https://beyondspace-admin.pages.dev/ground-control/main.js?t=' + Date.now(),
+        ], 'beyondspace-ground-control');
+    }
 });
