@@ -1,4 +1,14 @@
-document.addEventListener('DOMContentLoaded', function() {
+if (document.readyState !== 'loading') {
+  console.log('document is already ready, just execute code here');
+  triggerSectionReplace();
+} else {
+  document.addEventListener('DOMContentLoaded', function () {
+    console.log('document was not ready, place code here');
+    triggerSectionReplace();
+  });
+}
+
+function triggerSectionReplace() {
   if (window.location !== window.parent.location) {	  
     // The page is in an iframe	
     return;
@@ -33,5 +43,5 @@ document.addEventListener('DOMContentLoaded', function() {
     if (document.querySelector(target)) {
       galleries[i].appendChild(document.querySelector(target));
     }
-  }	
-});
+  }
+}
