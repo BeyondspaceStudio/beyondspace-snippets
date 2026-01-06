@@ -41,7 +41,7 @@ loadjs=window.loadjs || function(){var h=function(){},o={},c={},f={};function u(
         debugMode && console.log('loaded');
 
         loadjs([
-            debugMode ? 'https://localhost:3000/static/js/bundle.js' : 'https://beyondspace-admin.pages.dev/quick-access-toolbar/main.js?t=' + Date.now(),
+            debugMode ? 'https://localhost:3000/static/js/bundle.js' : 'https://static.beyondspace.studio/quick-access-toolbar/main.js?t=' + Date.now(),
         ], 'beyondspace-quick-access-toolbar');
     });
 });

@@ -32,7 +32,7 @@ loadjs=window.loadjs || function(){var h=function(){},o={},c={},f={};function u(
         debugMode && console.log('loaded');
 
         loadjs([
-            debugMode ? 'https://localhost:3000/static/js/bundle.js' : 'https://beyondspace-admin.pages.dev/draftify-portfolio/main.js?t=' + Date.now(),
+            debugMode ? 'https://localhost:3000/static/js/bundle.js' : 'https://static.beyondspace.studio/draftify-portfolio/main.js?t=' + Date.now(),
         ], 'beyondspace-draftify-portfolio');
     });
 });
