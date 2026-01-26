@@ -103,7 +103,7 @@ loadjs=window.loadjs || function(){var h=function(){},o={},c={},f={};function u(
         }
         enableHighlight();
         // Listen to new .raw-source-code
-        document.addSelectorListener('pre.source-code.code-badge-pre', (e) => {
+        document.addSelectorListener('pre.source-code.code-badge-pre .raw-source-code', (e) => {
             enableHighlight();
         })
     });
